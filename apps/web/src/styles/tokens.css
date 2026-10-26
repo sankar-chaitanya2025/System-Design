@@ -1,0 +1,80 @@
+/**
+ * SysDesign-Sim Design Tokens
+ * Standard CSS custom properties for studio interface and canvas rendering.
+ */
+:root {
+  /* Surface and Background Colors */
+  --color-bg-base: #030712;
+  --color-bg-subtle: #0b0f19;
+  --color-bg-panel: #111827;
+  --color-bg-surface: #1f2937;
+  --color-bg-hover: #374151;
+  --color-bg-active: #4b5563;
+
+  /* Border and Outline Colors */
+  --color-border-subtle: #1f2937;
+  --color-border-default: #374151;
+  --color-border-strong: #4b5563;
+  --color-border-accent: #6366f1;
+
+  /* Typography Colors */
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+  --color-text-inverse: #030712;
+
+  /* Accent & State Colors */
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-primary-subtle: rgba(99, 102, 241, 0.15);
+
+  --color-success: #10b981;
+  --color-success-subtle: rgba(16, 185, 129, 0.15);
+  --color-warning: #f59e0b;
+  --color-warning-subtle: rgba(245, 158, 11, 0.15);
+  --color-error: #ef4444;
+  --color-error-subtle: rgba(239, 68, 68, 0.15);
+
+  /* Canvas & Packet Particles */
+  --canvas-grid-color: rgba(148, 163, 184, 0.08);
+  --canvas-grid-dots: rgba(148, 163, 184, 0.15);
+  --packet-read-color: #38bdf8;
+  --packet-write-color: #f472b6;
+  --packet-error-color: #ef4444;
+  --packet-wave-color: #a855f7;
+
+  /* Node Semantic Accents */
+  --node-client-accent: #38bdf8;
+  --node-gateway-accent: #a855f7;
+  --node-app-accent: #6366f1;
+  --node-cache-accent: #10b981;
+  --node-db-accent: #f59e0b;
+  --node-queue-accent: #ec4899;
+
+  /* Typography */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.875rem;
+  --font-size-lg: 1rem;
+  --font-size-xl: 1.25rem;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.6);
+  --shadow-glow-primary: 0 0 15px rgba(99, 102, 241, 0.35);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -13,7 +13,7 @@ pub struct NodeFluidState {
     pub egress_success_rps: f64,
     pub shed_drop_rps: f64,
     pub retry_amplification_factor: f64,
-    pubinstantaneous_utilization: f64,
+    pub instantaneous_utilization: f64,
 }
 
 pub struct FluidFlowSolver;

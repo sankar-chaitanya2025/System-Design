@@ -4,7 +4,14 @@ import { App } from './App';
 import './styles/globals.css';
 
 export function bootstrapApplication(): void {
-  // Stub: Mount React root and initialize WebWorker Wasm bridge
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    ReactDOM.createRoot(rootElement).render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    );
+  }
 }
 
 bootstrapApplication();

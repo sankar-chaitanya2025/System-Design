@@ -1,10 +1,45 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './tokens.css';
 
-:root {
-  --canvas-grid-color: rgba(148, 163, 184, 0.12);
-  --packet-read-color: #38bdf8;
-  --packet-write-color: #f472b6;
-  --packet-error-color: #ef4444;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* React Flow Canvas overrides */
+.react-flow__pane {
+  background-color: var(--color-bg-base);
+}
+
+.react-flow__background {
+  background-color: var(--color-bg-base);
+}
+
+.react-flow__edge-path {
+  stroke: var(--color-border-default);
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: var(--color-primary);
 }

@@ -1,5 +1,3 @@
-import { ScenarioPreset } from '@/types';
-
 export function downloadBlueprintFile(_filename: string, _jsonContent: string): void {
   throw new Error('Not implemented');
 }

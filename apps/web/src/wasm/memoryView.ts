@@ -1,4 +1,4 @@
-import { EdgeId, NodeId, NodeTelemetrySnapshot } from '@/types';
+import { NodeTelemetrySnapshot } from '@/types';
 
 export interface ZeroCopyLayoutDescriptor {
   nodeMetricsPtr: number;
@@ -14,8 +14,8 @@ export interface ZeroCopyLayoutDescriptor {
  */
 export class TelemetryMemoryReader {
   constructor(
-    private readonly wasmMemory: WebAssembly.Memory,
-    private layout: ZeroCopyLayoutDescriptor
+    protected readonly wasmMemory: WebAssembly.Memory,
+    protected layout: ZeroCopyLayoutDescriptor
   ) {}
 
   public updateLayout(_newLayout: ZeroCopyLayoutDescriptor): void {

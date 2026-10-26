@@ -13,8 +13,8 @@ export interface ISimulationWorkerBridge {
 }
 
 export class SimulationWorkerBridge implements ISimulationWorkerBridge {
-  private worker: Worker | null = null;
-  private telemetryReader: TelemetryMemoryReader | null = null;
+  protected worker: Worker | null = null;
+  protected telemetryReader: TelemetryMemoryReader | null = null;
 
   public async initialize(_blueprintJson?: string): Promise<void> {
     throw new Error('Not implemented');
