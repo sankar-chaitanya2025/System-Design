@@ -1,10 +1,11 @@
 use crate::math::LatencyDistributionSpec;
 use crate::nodes::traits::HardwareResourceSpec;
 use crate::time::SimDuration;
-use crate::topology::NodeId;
+use crate::topology::ids::NodeId;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase", tag = "type")]
 pub enum ConcurrencyExecutionModel {
     OSThreadPool {
         max_worker_threads: u16,
@@ -20,6 +21,7 @@ pub enum ConcurrencyExecutionModel {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct GarbageCollectionPauseSpec {
     pub enabled: bool,
     pub allocation_rate_mb_per_req: f64,
@@ -28,6 +30,7 @@ pub struct GarbageCollectionPauseSpec {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct AppServerConfig {
     pub hardware: HardwareResourceSpec,
     pub concurrency_model: ConcurrencyExecutionModel,
@@ -40,6 +43,7 @@ pub struct AppServerConfig {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct AppServerNode {
     pub id: NodeId,
     pub config: AppServerConfig,

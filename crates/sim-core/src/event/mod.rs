@@ -5,5 +5,5 @@ pub mod types;
 
 pub use handler::{EventContext, EventHandler};
 pub use queue::EventQueue;
-pub use scheduler::EventScheduler;
+pub use scheduler::{EventScheduler, QueueScheduler};
 pub use types::{Event, EventId, EventPayload, EventPriority};

@@ -56,4 +56,14 @@ pub enum SimError {
 
     #[error("Invalid engine configuration: {0}")]
     InvalidConfiguration(String),
+
+    #[error("Cannot advance to {target:?}: virtual clock is already at {current:?}")]
+    InvalidTimeTarget { target: SimTime, current: SimTime },
+
+    #[error("Engine halted after an event handler error; call reset() to continue")]
+    EngineHalted,
+
+    /// Feature exists in the type model but is not implemented yet (see ADR-0006).
+    #[error("Not yet supported: {0}")]
+    Unsupported(String),
 }

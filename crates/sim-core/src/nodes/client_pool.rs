@@ -1,10 +1,11 @@
 use crate::math::ArrivalRateCurve;
 use crate::payloads::{ConsistencyRequirement, OperationType};
 use crate::time::SimDuration;
-use crate::topology::{NodeId, RegionId};
+use crate::topology::ids::{NodeId, RegionId};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct RetryPolicySpec {
     pub max_retries: u8,
     pub base_backoff: SimDuration,
@@ -14,6 +15,7 @@ pub struct RetryPolicySpec {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ClientPoolConfig {
     pub simulated_user_count: u64,
     pub arrival_curve: ArrivalRateCurve,
@@ -27,6 +29,7 @@ pub struct ClientPoolConfig {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ClientPoolNode {
     pub id: NodeId,
     pub region: RegionId,

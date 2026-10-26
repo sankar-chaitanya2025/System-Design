@@ -1,10 +1,11 @@
 use crate::error::SimResult;
 use crate::event::EventContext;
 use crate::payloads::{FluidDensityWave, RequestPacket, ResponsePacket};
-use crate::topology::NodeId;
+use crate::topology::ids::NodeId;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase", tag = "type")]
 pub enum NodeHealthStatus {
     Healthy,
     Degraded { saturation_pct: u8 },
@@ -14,6 +15,7 @@ pub enum NodeHealthStatus {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct HardwareResourceSpec {
     pub vcpu_cores: u16,
     pub memory_mib: u64,
@@ -24,6 +26,7 @@ pub struct HardwareResourceSpec {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct NodeTelemetrySnapshot {
     pub node_id: NodeId,
     pub health: NodeHealthStatus,
