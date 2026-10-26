@@ -1,0 +1,16 @@
+# Rust / Cargo
+target/
+Cargo.lock
+**/*.rs.bk
+
+# WebAssembly generated bindings
+apps/web/src/wasm/pkg/
+
+# Node / Frontend
+node_modules/
+apps/web/node_modules/
+apps/web/dist/
+.DS_Store
+*.log
+.env
+.env.*

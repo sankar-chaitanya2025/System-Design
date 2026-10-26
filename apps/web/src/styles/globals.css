@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas-grid-color: rgba(148, 163, 184, 0.12);
+  --packet-read-color: #38bdf8;
+  --packet-write-color: #f472b6;
+  --packet-error-color: #ef4444;
+}

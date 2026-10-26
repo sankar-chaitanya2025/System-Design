@@ -1,0 +1,21 @@
+{
+  "name": "sysdesign-sim-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Production-grade Browser-Based Discrete-Event System Design Simulator (Rust/Wasm + React/TS)",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "build:wasm": "wasm-pack build crates/sim-wasm --target web --out-dir ../../apps/web/src/wasm/pkg",
+    "dev": "npm --workspace=apps/web run dev",
+    "build": "npm run build:wasm && npm --workspace=apps/web run build",
+    "lint": "cargo clippy --workspace && npm --workspace=apps/web run lint",
+    "test:rust": "cargo test --workspace"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  }
+}
